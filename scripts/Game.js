@@ -15,8 +15,15 @@ class Game {
         board[i][j] = new Node(i, j, this.unitSize);
       }
     }
-    console.log(board);
     return board;
   } // end genBoard
+
+  showBoard() {
+    for (var i = 0; i < this.board.length; i++) {
+      for (var j = 0; j < this.board[i].length; j++) {
+        this.board[i][j].show();
+      }
+    }
+  }
 
 }
