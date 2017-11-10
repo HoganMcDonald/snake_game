@@ -40,7 +40,7 @@ class Snake {
     // updates head location
     switch (this.direction) {
       case 'left':
-        if (this.x - this.size <= 0) {
+        if (this.x - this.size < 0) {
           this.x = width - this.size;
         } else {
           this.x -= this.size;
@@ -54,7 +54,7 @@ class Snake {
         }
         break;
       case 'up':
-        if (this.y + this.size <= 0) {
+        if (this.y - this.size < 0) {
           this.y = height - this.size;
         } else {
           this.y -= this.size;
