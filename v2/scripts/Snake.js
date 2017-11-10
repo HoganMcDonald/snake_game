@@ -77,6 +77,11 @@ class Snake {
     if (this.counter % this.speed == 0) {
       this.counter = 0;
       this.move();
+      for (var i = 0; i < this.body.length; i++) {
+        if (this.x == this.body[i].x && this.y == this.body[i].y) {
+          this.body = [];
+        }
+      }
       if (this.x == food.x && this.y == food.y) {
         this.eat();
         food.changeLocation();
