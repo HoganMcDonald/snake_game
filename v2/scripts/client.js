@@ -1,14 +1,16 @@
-var snake;
+var snake, food;
 
 function setup() {
   createCanvas(600, 600);
   snake = new Snake();
+  food = new Food();
 }
 
 function draw() {
   background(20);
   snake.render();
   snake.update();
+  food.render();
 }
 
 function keyPressed() {

@@ -5,6 +5,8 @@ class Snake {
     this.y = height / 2;
     this.size = 15;
     this.color = 230;
+    
+    this.length = 0;
     this.body = [];
 
     this.speed = 4; // 1 = 60fps, 2 = 30fps, 4 = 15fps
