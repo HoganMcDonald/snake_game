@@ -7,21 +7,23 @@ function setup() {
 
 function draw() {
   background(20);
+  snake.render();
+  snake.update();
 }
 
 function keyPressed() {
   switch (key) {
     case 'W':
-      snake.direction = 'up';
+      snake.changeDirection('up');
       break;
     case 'A':
-      snake.direction = 'left';
+      snake.changeDirection('left');
       break;
     case 'S':
-      snake.direction = 'down';
+      snake.changeDirection('down');
       break;
     case 'D':
-      snake.direction = 'right';
+      snake.changeDirection('right');
       break;
     default:
       break;
