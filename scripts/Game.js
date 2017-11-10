@@ -2,6 +2,7 @@ class Game {
 
   constructor() {
     this.unitSize = 15;
+    this.totalUnits = width / this.unitSize;
     this.board = this.genBoard();
   }
 

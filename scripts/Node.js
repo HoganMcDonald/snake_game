@@ -20,15 +20,23 @@ class Node {
     switch (status) {
       case 'empty':
         fill(20);
+        noStroke();
+        rect(this.x, this.y, this.unitSize, this.unitSize);
         break;
       case 'snake':
         fill(230);
+        noStroke();
+        rect(this.x, this.y, this.unitSize, this.unitSize);
         break;
       case 'food':
         fill('red');
+        noStroke();
+        rect(this.x, this.y, this.unitSize, this.unitSize);
         break;
       default:
         fill(20);
+        noStroke();
+        rect(this.x, this.y, this.unitSize, this.unitSize);
     }
   }
 
