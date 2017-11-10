@@ -8,8 +8,8 @@ function setup() {
 
 function draw() {
   background(20);
+  snake.update(food);
   snake.render();
-  snake.update();
   food.render();
 }
 

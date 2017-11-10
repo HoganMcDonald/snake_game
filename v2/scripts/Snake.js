@@ -5,7 +5,7 @@ class Snake {
     this.y = height / 2;
     this.size = 15;
     this.color = 230;
-    
+
     this.length = 0;
     this.body = [];
 
@@ -17,12 +17,27 @@ class Snake {
     this.direction = direction;
   }
 
+  eat() {
+    length++;
+    this.body.push({x: this.x, y: this.y});
+  }
+
   render() {
     fill(this.color);
     rect(this.x, this.y, this.size, this.size);
+    for (var i = 0; i < this.body.length; i++) {
+      fill(this.color);
+      rect(this.body[i].x, this.body[i].y, this.size, this.size);
+    }
   }
 
   move() {
+
+    // moves body with head
+    this.body.unshift({x: this.x, y: this.y});
+    this.body.pop();
+
+    // updates head location
     switch (this.direction) {
       case 'left':
         if (this.x - this.size <= 0) {
@@ -57,11 +72,15 @@ class Snake {
     }
   }
 
-  update() {
+  update(food) {
     this.counter++
     if (this.counter % this.speed == 0) {
       this.counter = 0;
       this.move();
+      if (this.x == food.x && this.y == food.y) {
+        this.eat();
+        food.changeLocation();
+      }
     }
   }
 
