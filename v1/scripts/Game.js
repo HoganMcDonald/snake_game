@@ -4,6 +4,7 @@ class Game {
     this.unitSize = 15;
     this.totalUnits = width / this.unitSize;
     this.board = this.genBoard();
+    this.showBoard();
   }
 
   genBoard() {
@@ -22,7 +23,7 @@ class Game {
   showBoard() {
     for (var i = 0; i < this.board.length; i++) {
       for (var j = 0; j < this.board[i].length; j++) {
-        this.board[i][j].show();
+        this.board[i][j].update();
       }
     }
   }

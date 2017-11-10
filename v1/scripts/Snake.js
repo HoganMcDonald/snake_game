@@ -2,7 +2,7 @@ class Snake {
   constructor() {
     this.body = [{x: 20, y: 20}];
     this.direction = 'up';
-    this.speed = 2; // 1 = 60fps, 2 = 30fps, 4 = 15fps, 6 = 10fps
+    this.speed = 3; // 1 = 60fps, 2 = 30fps, 4 = 15fps, 6 = 10fps
     this.counter = 0;
   }
 
@@ -31,6 +31,7 @@ class Snake {
               this.body[i].x += 1;
             }
             break;
+
           case 'up':
             if (this.body[i].y - 1 < 0) {
               this.body[i].y = board.length - 1;
